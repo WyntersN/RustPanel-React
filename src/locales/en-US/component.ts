@@ -3,8 +3,8 @@
  * @version: 
  * @Author: Wynters
  * @Date: 2024-05-12 14:13:03
- * @LastEditTime: 2024-05-18 15:33:19
- * @FilePath: \umi-rust-panel\src\locales\en-US\component.ts
+ * @LastEditTime: 2024-05-24 13:07:49
+ * @FilePath: \RustPanel-react\src\locales\en-US\component.ts
  */
 export default {
   'component.tagSelect.expand': 'Expand',
@@ -12,5 +12,6 @@ export default {
   'component.tagSelect.all': 'All',
   'menu.home': 'Home',
   'menu.file': 'File Mana',
+  'menu.site': 'WebSite',
   
 };

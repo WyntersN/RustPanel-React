@@ -3,8 +3,8 @@
  * @version:
  * @Author: Wynters
  * @Date: 2024-05-12 14:13:03
- * @LastEditTime: 2024-05-18 12:59:16
- * @FilePath: \umi-rust-panel\src\utils\request.ts
+ * @LastEditTime: 2024-05-24 09:54:31
+ * @FilePath: \RustPanel-react\src\utils\request.ts
  */
 // import { refreshAdminToken } from '@/services/admin';
 // import { refreshUserToken } from '@/services/api/user';

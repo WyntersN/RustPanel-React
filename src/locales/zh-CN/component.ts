@@ -12,4 +12,5 @@ export default {
   'component.tagSelect.all': '全部',
   'menu.home': '首页',
   'menu.file': '文件管理',
+  'menu.site': '站点管理',
 };

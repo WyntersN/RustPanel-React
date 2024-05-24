@@ -99,7 +99,7 @@ const List: React.FC = () => {
       title: '大小',
       dataIndex: 'size',
       filterMode: 'tree',
-      render: (_, record) => (record.size ? Tool.bytesAuto(record.size) : '-'),
+      render: (_, record) => (record.isDir ? '-' : Tool.bytesAuto(record.size)),
       onFilter: (value, record) => record.name.startsWith(value as string),
       width: '30%',
     },
