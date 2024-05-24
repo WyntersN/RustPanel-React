@@ -318,7 +318,7 @@ const HomePage: React.FC = () => {
                       percent={info.cpu.usage}
                     />
                     <div className={styles.os_info_progress_label_top}>
-                      {info.cpu.len} <FormattedMessage id="text.core" />
+                      {info.cpu.len} <FormattedMessage id="text.cores" />
                     </div>
                   </div>
 
@@ -434,7 +434,7 @@ const HomePage: React.FC = () => {
                         Number(new Date(info.os.boot_time * 1000))) /
                         (1000 * 60 * 60 * 24),
                     )}
-                    <FormattedMessage id="text.day" />)
+                    <FormattedMessage  id="text.days" />)
                   </span>
                 </div>
               </div>

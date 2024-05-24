@@ -3,7 +3,7 @@
  * @version: 
  * @Author: Wynters
  * @Date: 2024-05-12 14:13:03
- * @LastEditTime: 2024-05-24 09:31:09
+ * @LastEditTime: 2024-05-24 13:19:51
  * @FilePath: \RustPanel-react\src\locales\en-US.ts
  */
 import component from './en-US/component';
@@ -13,8 +13,8 @@ export default {
   'page.home.payment_amount': 'Payment Amount',
   'text.copy': 'Copy',
   'text.long_copy': 'Click Copy',
-  'text.core': 'Core',
-  'text.day': 'Day',
+  'text.cores': 'Cores',
+  'text.days': ' Days',
   'home.state': 'Server States',
   'home.state.cpu_use': 'CPU Usage',
   'home.state.memory_use': 'Memory Usage',
