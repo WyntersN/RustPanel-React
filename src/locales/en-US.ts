@@ -3,7 +3,7 @@
  * @version: 
  * @Author: Wynters
  * @Date: 2024-05-12 14:13:03
- * @LastEditTime: 2024-05-24 13:19:51
+ * @LastEditTime: 2024-05-28 21:17:05
  * @FilePath: \RustPanel-react\src\locales\en-US.ts
  */
 import component from './en-US/component';
@@ -25,5 +25,6 @@ export default {
   'home.OS.release_version':'Rel',
   'home.OS.kernel_version':'Kern',
   'home.OS.boot_time':'Boot',
+  'file.dir.root':'ROOT DIR',
   ...component,
 };

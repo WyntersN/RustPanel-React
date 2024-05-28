@@ -17,5 +17,6 @@ export default {
   'home.OS.release_version':'发行版本',
   'home.OS.kernel_version':'内核版本',
   'home.OS.boot_time':'启动时间',
+  'file.dir.root':'根目录',
   ...component,
 };

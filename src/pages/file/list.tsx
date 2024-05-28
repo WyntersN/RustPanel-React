@@ -1,6 +1,7 @@
 import CustomIcon from '@/components/CustomSvg';
 import { file_list } from '@/services/file';
 import Tool from '@/utils/tool';
+import { FormattedMessage } from '@umijs/max';
 import type { TableColumnsType } from 'antd';
 import { Breadcrumb, Spin, Table } from 'antd';
 import React, { useEffect, useState } from 'react';
@@ -51,39 +52,41 @@ const List: React.FC = () => {
             modified_time: element.modified_time,
           });
         });
-        urlParams.path = res.data.path.replace(/\\/g, '/');
+        urlParams.path = res.data.path
+          .replace(/\\/g, '/')
+          .replace(/\/\//g, '/');
         pathHeader = [];
         urlParams.path
           .split('/')
           .forEach((element: any, index: number, array) => {
-            if (index === array.length - 1) {
-              pathHeader.push({ title: <span>{element}</span> });
-            } else {
-              pathHeader.push({
-                title: (
-                  <a
-                    style={{
-                      color: '#1890ff',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                      maxWidth: '200px',
-                    }}
-                    href="javascript:;"
-                    onClick={() => {
-                      const path = urlParams.path
-                        .split('/')
-                        .slice(0, index + 1)
-                        .join('/');
-                      urlParams.path = path.endsWith('/') ? path : path + '/';
-                      getList();
-                    }}
-                  >
-                    {element}
-                  </a>
-                ),
-              });
-            }
+            pathHeader.push({
+              title: (
+                <a
+                  style={{
+                    color: '#1890ff',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    maxWidth: '90px',
+                  }}
+                  href="javascript:;"
+                  onClick={() => {
+                    const path = urlParams.path
+                      .split('/')
+                      .slice(0, index + 1)
+                      .join('/');
+                    urlParams.path = path.endsWith('/') ? path : path + '/';
+                    getList();
+                  }}
+                >
+                  {element === '' && index === 0 ? (
+                    <FormattedMessage id="file.dir.root" />
+                  ) : (
+                    element
+                  )}
+                </a>
+              ),
+            });
           });
         setData(data);
       }
