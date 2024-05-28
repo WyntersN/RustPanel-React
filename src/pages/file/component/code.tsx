@@ -3,8 +3,8 @@
  * @version:
  * @Author: Wynters
  * @Date: 2024-05-20 15:11:04
- * @LastEditTime: 2024-05-20 18:23:16
- * @FilePath: \umi-rust-panel\src\pages\file\component\code.tsx
+ * @LastEditTime: 2024-05-28 19:54:27
+ * @FilePath: \RustPanel-react\src\pages\file\component\code.tsx
  */
 import { file_content, file_save } from '@/services/file';
 import Tool from '@/utils/tool';
@@ -14,6 +14,8 @@ import MonacoEditor from 'react-monaco-editor';
 
 const options: any = {
   selectOnLineNumbers: false,
+  wordWrap: 'on', // 开启自动换行
+  //wordWrapMinified: true, // 对压缩内容启用换行
   roundedSelection: false,
   readOnly: false, // //是否只读  取值 true | false
   cursorStyle: 'line',
