@@ -12,6 +12,6 @@ export default {
   'component.tagSelect.all': 'All',
   'menu.home': 'Home',
   'menu.file': 'File Mana',
-  'menu.site': 'WebSite',
+  'menu.website': 'WebSite',
   
 };

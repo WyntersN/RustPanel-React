@@ -102,6 +102,7 @@ const List: React.FC = () => {
   const columns: TableColumnsType<DataType> = [
     {
       title: '文件夹 / 文件',
+      sorter: (a, b) => a.name.localeCompare(b.name),
       dataIndex: 'name',
       filterMode: 'tree',
       onFilter: (value, record) => record.name.startsWith(value as string),
