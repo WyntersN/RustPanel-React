@@ -33,13 +33,13 @@ export async function getInitialState(): Promise<initialStateType> {
   };
   try {
     if (
-      location.pathname !== '/admin/login' &&
+      location.pathname !== '/login' &&
       !localStorage.getItem('token')
     ) {
       history.push(
         localStorage.getItem('v')
-          ? '/admin/login?v=' + localStorage.getItem('v')
-          : '/admin/login',
+          ? '/login?v=' + localStorage.getItem('v')
+          : '/login',
       );
       return data;
     } else {
@@ -90,14 +90,14 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
       const { location } = history;
       //console.log({ location });
       
-      if (initialState!.app === 'admin') {
+      if (initialState!.app !== 'login') {
         // 如果没有登录，重定向到 登录页面
         if (!initialState!.isLogin) {
           localStorage.removeItem('app');
           history.push(
             localStorage.getItem('v')
-              ? '/admin/login?v=' + localStorage.getItem('v')
-              : '/admin/login',
+              ? '/login?v=' + localStorage.getItem('v')
+              : '/login',
           );
           return;
         }
@@ -107,8 +107,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
           return;
         }
       }
-      // if (location.pathname !== '/admin/login' && !initialState!.isLogin) {
-      //   history.push('/admin/login');
+      // if (location.pathname !== '/login' && !initialState!.isLogin) {
+      //   history.push('/login');
       //   return;
       // }
     },

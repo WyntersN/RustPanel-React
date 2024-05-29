@@ -9,8 +9,8 @@
 export const DEFAULT_NAME = 'RustPanel';
 
 export const LOGIN_PATH = localStorage.getItem('v')
-  ? '/admin/login?v=' + localStorage.getItem('v')
-  : '/admin/login';
+  ? '/login?v=' + localStorage.getItem('v')
+  : '/login';
 
 export const ROUTER_WHITE = [
   '/user/login',
@@ -18,4 +18,4 @@ export const ROUTER_WHITE = [
   '/user/resetPassword',
 ];
 
-export const NOAUTHROUTER = ['/', '/home', '/admin/login'];
+export const NOAUTHROUTER = ['/', '/home', '/login'];

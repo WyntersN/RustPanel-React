@@ -3,7 +3,7 @@
  * @version:
  * @Author: Wynters
  * @Date: 2024-05-12 14:13:03
- * @LastEditTime: 2024-05-24 09:54:31
+ * @LastEditTime: 2024-05-29 16:04:19
  * @FilePath: \RustPanel-react\src\utils\request.ts
  */
 // import { refreshAdminToken } from '@/services/admin';
@@ -56,8 +56,8 @@ const requestConfig: RequestConfig = {
         Message.error('请重新登录');
         history.push(
           localStorage.getItem('v')
-            ? '/admin/login?v=' + localStorage.getItem('v')
-            : '/admin/login',
+            ? '/login?v=' + localStorage.getItem('v')
+            : '/login',
         );
         return Promise.resolve(error);
       }
