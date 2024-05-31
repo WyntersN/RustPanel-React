@@ -1,13 +1,13 @@
 import { os_info } from '@/services/os';
 import Tool from '@/utils/tool';
 import { ProCard } from '@ant-design/pro-components';
+import { FormattedMessage } from '@umijs/max';
 import type { ProgressProps } from 'antd';
 import { Card, Col, Progress, Row } from 'antd';
 import * as echarts from 'echarts';
 import RcResizeObserver from 'rc-resize-observer';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.less';
-import { FormattedMessage } from '@umijs/max'
 
 const commonProgress: ProgressProps['strokeColor'] = {
   '0%': '#87d068',
@@ -289,7 +289,9 @@ const HomePage: React.FC = () => {
             title={
               <span>
                 <span className={styles.card} />
-                <span style={{ marginLeft: '5px' }}><FormattedMessage id="home.state" /></span>
+                <span style={{ marginLeft: '5px' }}>
+                  <FormattedMessage id="home.state" />
+                </span>
               </span>
             }
             split={responsive ? 'horizontal' : 'vertical'}
@@ -306,7 +308,7 @@ const HomePage: React.FC = () => {
                 >
                   <div className={styles.os_info_progress}>
                     <div className={styles.os_info_progress_label_bottom}>
-                    <FormattedMessage id="home.state.cpu_use" />
+                      <FormattedMessage id="home.state.cpu_use" />
                     </div>
                     <Progress
                       success={{ strokeColor: 'red' }}
@@ -324,7 +326,7 @@ const HomePage: React.FC = () => {
 
                   <div className={styles.os_info_progress}>
                     <div className={styles.os_info_progress_label_bottom}>
-                    <FormattedMessage id="home.state.memory_use" />
+                      <FormattedMessage id="home.state.memory_use" />
                     </div>
                     <Progress
                       type="circle"
@@ -349,12 +351,17 @@ const HomePage: React.FC = () => {
                         status="active"
                         strokeColor={commonProgress}
                         percent={Number(
-                          ((item.available / item.total) * 100).toFixed(0),
+                          (
+                            ((item.total - item.available) / item.total) *
+                            100
+                          ).toFixed(0),
                         )}
                       />
                       <div className={styles.os_info_progress_label_top}>
-                        {Number(item.available / 1024).toFixed(2)}G /{' '}
-                        {Number(item.total / 1024).toFixed(2)}G
+                        {Number((item.total - item.available) / 1024).toFixed(
+                          2,
+                        )}
+                        G / {Number(item.total / 1024).toFixed(2)}G
                       </div>
                     </div>
                   ))}
@@ -375,46 +382,53 @@ const HomePage: React.FC = () => {
               split={'horizontal'}
               bordered={true}
               headerBordered
-              extra={<a href="javascript:;"> <FormattedMessage id="text.long_copy" /></a>}
+              extra={
+                <a href="javascript:;">
+                  {' '}
+                  <FormattedMessage id="text.long_copy" />
+                </a>
+              }
               title={
                 <span>
                   <span className={styles.card} />
-                  <span style={{ marginLeft: '5px' }}><FormattedMessage id="home.OS.info" /></span>
+                  <span style={{ marginLeft: '5px' }}>
+                    <FormattedMessage id="home.OS.info" />
+                  </span>
                 </span>
               }
               loading={info.loading}
             >
               <div style={{ padding: '18px' }}>
                 <div className={styles.os_info_div}>
-                <FormattedMessage id="home.OS.host_name" />
+                  <FormattedMessage id="home.OS.host_name" />
                   <span className={styles.os_info_span}>
                     {info.os.host_name}
                   </span>
                 </div>
                 <div className={styles.os_info_div}>
-                <FormattedMessage id="home.OS.type" />
+                  <FormattedMessage id="home.OS.type" />
                   <span className={styles.os_info_span}>{info.os.os_type}</span>
                 </div>
                 <div className={styles.os_info_div}>
-                <FormattedMessage id="home.OS.structure" />
+                  <FormattedMessage id="home.OS.structure" />
                   <span className={styles.os_info_span}>
                     {info.os.architecture}
                   </span>
                 </div>
                 <div className={styles.os_info_div}>
-                <FormattedMessage id="home.OS.release_version" />
+                  <FormattedMessage id="home.OS.release_version" />
                   <span className={styles.os_info_span}>
                     {info.os.long_os_version}
                   </span>
                 </div>
                 <div className={styles.os_info_div}>
-                <FormattedMessage id="home.OS.kernel_version" />
+                  <FormattedMessage id="home.OS.kernel_version" />
                   <span className={styles.os_info_span}>
                     {info.os.kernel_version}
                   </span>
                 </div>
                 <div className={styles.os_info_div}>
-                <FormattedMessage id="home.OS.boot_time" />
+                  <FormattedMessage id="home.OS.boot_time" />
                   <span className={styles.os_info_span}>
                     {new Date(info.os.boot_time * 1000).toLocaleString(
                       'cn-Zh',
@@ -434,7 +448,7 @@ const HomePage: React.FC = () => {
                         Number(new Date(info.os.boot_time * 1000))) /
                         (1000 * 60 * 60 * 24),
                     )}
-                    <FormattedMessage  id="text.days" />)
+                    <FormattedMessage id="text.days" />)
                   </span>
                 </div>
               </div>
