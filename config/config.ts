@@ -1,17 +1,17 @@
 /*
- * @Descripttion: 
- * @version: 
+ * @Descripttion:
+ * @version:
  * @Author: Wynters
  * @Date: 2024-05-12 14:13:03
- * @LastEditTime: 2024-05-19 22:47:16
- * @FilePath: \umi-rust-panel\config\config.ts
+ * @LastEditTime: 2024-07-11 06:12:08
+ * @FilePath: \RustPanel-React\config\config.ts
  */
 //郑重声明：本源代码以Apache2.0协议开源不能修改版权信息，否则将保留追究法律责任的权利
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 const AppConfig = {
   app: {
     layout: {
-      title: 'RustPanel',//此地方不得进行修改
+      title: 'RustPanel', //此地方不得进行修改
       logo: '/images/logo.png',
     },
     favicons: ['/favicon.ico'],
@@ -40,9 +40,6 @@ const AppConfig = {
   },
 };
 
-
-
-
 import { defineConfig } from '@umijs/max';
 /* 无法执行 ? */
 export function render(oldRender: any) {
@@ -58,10 +55,11 @@ export default defineConfig({
     appConfig: {},
     theme: {},
   },
-   //"browser" | "hash" | "memory"
-   history: { type: AppConfig.app.history},
+  //"browser" | "hash" | "memory"
+  history: { type: AppConfig.app.history },
+  mfsu: false,
 
-  locale:AppConfig.locale,
+  locale: AppConfig.locale,
   /** 权限配置 */
   access: {},
   /** 数据流 */
@@ -72,7 +70,7 @@ export default defineConfig({
   /** 请求配置 */
   request: {},
   layout: {
-    title: 'RustPanel',//此地方不得进行修改
+    title: 'RustPanel', //此地方不得进行修改
     logo: '/images/logo.png',
   },
   /** 约定式路由配置 */
@@ -98,9 +96,6 @@ export default defineConfig({
 
   proxy: AppConfig.proxy[process.env.NODE_ENV],
 
-
-
-
   plugins: [require.resolve('@umijs/plugins/dist/unocss')],
   unocss: { watch: ['src/**/*.tsx'] },
 
@@ -120,19 +115,76 @@ export default defineConfig({
   //       '安全的服务器可视化面板',
   //   },
   // ],
-  esbuildMinifyIIFE:true,
+  esbuildMinifyIIFE: true,
   chainWebpack(memo) {
     // 代码高亮显示
-      memo.plugin('monaco-editor').use(MonacoWebpackPlugin, [
-          {
-            // 支持高亮显示的代码语言
-              languages: ['abap' , 'apex' , 'azcli' , 'bat' , 'cameligo' , 'clojure' , 'coffee' , 'cpp' , 'csharp' , 'csp' , 
-              'css' , 'dockerfile' , 'fsharp' , 'go' , 'graphql' , 'handlebars' , 'html' , 'ini' , 'java' , 'javascript' , 
-              'json' , 'kotlin' , 'less' , 'lua' , 'markdown' , 'mips' , 'msdax' , 'mysql' , 'objective-c' , 'pascal' , 
-              'pascaligo' , 'perl' , 'pgsql' , 'php' , 'postiats' , 'powerquery' , 'powershell' , 'pug' , 'python' , 'r' , 
-              'razor' , 'redis' , 'redshift' , 'restructuredtext' , 'ruby' , 'rust' , 'sb' , 'scheme' , 'scss' , 'shell' , 
-              'solidity' , 'sophia' , 'sql' , 'st' , 'swift' , 'tcl' , 'twig' , 'typescript' , 'vb' , 'xml' , 'yaml']
-          }
-      ])
-  }
+    memo.plugin('monaco-editor').use(MonacoWebpackPlugin, [
+      {
+        // 支持高亮显示的代码语言
+        languages: [
+          'abap',
+          'apex',
+          'azcli',
+          'bat',
+          'cameligo',
+          'clojure',
+          'coffee',
+          'cpp',
+          'csharp',
+          'csp',
+          'css',
+          'dockerfile',
+          'fsharp',
+          'go',
+          'graphql',
+          'handlebars',
+          'html',
+          'ini',
+          'java',
+          'javascript',
+          'json',
+          'kotlin',
+          'less',
+          'lua',
+          'markdown',
+          'mips',
+          'msdax',
+          'mysql',
+          'objective-c',
+          'pascal',
+          'pascaligo',
+          'perl',
+          'pgsql',
+          'php',
+          'postiats',
+          'powerquery',
+          'powershell',
+          'pug',
+          'python',
+          'r',
+          'razor',
+          'redis',
+          'redshift',
+          'restructuredtext',
+          'ruby',
+          'rust',
+          'sb',
+          'scheme',
+          'scss',
+          'shell',
+          'solidity',
+          'sophia',
+          'sql',
+          'st',
+          'swift',
+          'tcl',
+          'twig',
+          'typescript',
+          'vb',
+          'xml',
+          'yaml',
+        ],
+      },
+    ]);
+  },
 });

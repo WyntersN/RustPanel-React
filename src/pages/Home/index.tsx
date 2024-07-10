@@ -358,10 +358,8 @@ const HomePage: React.FC = () => {
                         )}
                       />
                       <div className={styles.os_info_progress_label_top}>
-                        {Number((item.total - item.available) / 1024).toFixed(
-                          2,
-                        )}
-                        G / {Number(item.total / 1024).toFixed(2)}G
+                        {Number(item.available / 1024).toFixed(2)}G /{' '}
+                        {Number(item.total / 1024).toFixed(2)}G
                       </div>
                     </div>
                   ))}

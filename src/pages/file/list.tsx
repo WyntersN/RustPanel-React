@@ -67,7 +67,7 @@ const List: React.FC = () => {
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap',
-                    maxWidth: '90px',
+                    maxWidth: '20vh',
                   }}
                   href="javascript:;"
                   onClick={() => {

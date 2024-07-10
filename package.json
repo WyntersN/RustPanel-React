@@ -39,7 +39,7 @@
     "antd-img-crop": "^4.18.0",
     "dayjs": "^1.11.10",
     "husky": "^9",
-    "lint-staged": "^13.2.0",
+    "lint-staged": "^15.2.7",
     "mockjs": "^1.1.0",
     "prettier": "^2.8.7",
     "prettier-plugin-organize-imports": "^3.2.2",
