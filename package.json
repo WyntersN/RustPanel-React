@@ -25,7 +25,8 @@
     "monaco-editor-webpack-plugin": "^7.1.0",
     "react-monaco-editor": "^0.55.0",
     "sm-crypto": "^0.3.13",
-    "unocss": "^0.57.7"
+    "unocss": "^0.57.7",
+    "zui": "^3.0.0"
   },
   "devDependencies": {
     "@types/mockjs": "^1.0.10",

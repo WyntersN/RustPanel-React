@@ -125,6 +125,9 @@ const Login: React.FC = () => {
       <p style={{ color: 'red' }}>
         注意：【关闭安全入口】将使您的面板登录地址被直接暴露在互联网上，非常危险，请谨慎操作
       </p>
+      <div className="alert">
+        <i className="icon icon-info-sign"></i> 嘿！这是一则提示。
+      </div>
     </div>
   ) : (
     <div

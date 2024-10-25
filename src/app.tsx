@@ -2,6 +2,7 @@ import logo from '@/assets/images/logo.png';
 import { Access, AvatarDropdown, CustomActionList } from '@/components/Layout';
 import { get_menus } from '@/services/user';
 import { RunTimeLayoutConfig, history } from '@umijs/max';
+import 'zui/css';
 import './styles/global.less';
 
 export async function getInitialState(): Promise<initialStateType> {
@@ -32,10 +33,7 @@ export async function getInitialState(): Promise<initialStateType> {
     menus: [],
   };
   try {
-    if (
-      location.pathname !== '/login' &&
-      !localStorage.getItem('token')
-    ) {
+    if (location.pathname !== '/login' && !localStorage.getItem('token')) {
       history.push(
         localStorage.getItem('v')
           ? '/login?v=' + localStorage.getItem('v')
@@ -89,7 +87,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     onPageChange: () => {
       const { location } = history;
       //console.log({ location });
-      
+
       if (initialState!.app !== 'login') {
         // 如果没有登录，重定向到 登录页面
         if (!initialState!.isLogin) {
